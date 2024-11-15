@@ -1,5 +1,9 @@
-public class Main {
-    public static void main(String args[])     {
+import javax.swing.*;
+
+public static void main(String[] args) {
+    SwingUtilities.invokeLater(() -> {
+        // Create your KunstvaerkSamling instance here
+        KunstvaerkSamling kvs = new KunstvaerkSamling();
         Museum smk = new Museum ("Statens Museum for Kunst", "Sølvtorvet,  København");
         Museum fsm = new Museum ("Fyns Stifts Museum", "Jernbanegade, Odense");
 
@@ -15,7 +19,7 @@ public class Main {
         Maleri par = new Maleri ("Parti fra Dosseringen modNørrebro",  1841,100,85,smk);
         par.addOphavsmand(køb);
 
-        KunstvaerkSamling kvs = new KunstvaerkSamling();
+        //KunstvaerkSamling kvs = new KunstvaerkSamling();
         kvs.add(kal);
         kvs.add(rus);
         kvs.add(par);
@@ -44,15 +48,7 @@ public class Main {
         kvs.add(l);
         kvs.add(dff);
 
-        //kvs.findSangeMedFlereKomponister();
-        //kvs.findMalerierPaaMuseum("Statens Museum for Kunst");
-        //kvs.beregnAntalLaesteSider();
-        //kvs.skrivBogNavn();
-
-        //kvs.findMalerierPaaMuseum("Fyns Stifts Museum");
-
-       // kvs.findSangeMedEnKomponist();
-
-        kvs.udskrivKunstvaerker();
-    }
+        GUI gui = new GUI(kvs);
+        gui.setVisible(true);
+    });
 }

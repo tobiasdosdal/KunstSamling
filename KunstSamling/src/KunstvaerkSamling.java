@@ -64,8 +64,7 @@ public class KunstvaerkSamling
     public void beregnAntalLaesteSider() {
         int totalSider = 0;
         for (Kunstvaerk k : kunstvaerker) {
-            if (k instanceof Bog) {
-                Bog b = (Bog) k;
+            if (k instanceof Bog b) {
                 totalSider += b.getAntalSider();
             }
         }
@@ -75,8 +74,7 @@ public class KunstvaerkSamling
     public void skrivBogNavn() {
         String bogNavn = "";
         for (Kunstvaerk k : kunstvaerker) {
-            if (k instanceof Bog) {
-                Bog b = (Bog) k;
+            if (k instanceof Bog b) {
                 bogNavn = b.getTitel();
                 System.out.println(bogNavn);
 
